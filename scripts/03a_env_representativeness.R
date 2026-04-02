@@ -550,15 +550,16 @@ make_range_bars <- function(df_raster, raster_label, df_field, field_label) {
 }
 
 # -----------------------------------------------------------------------------
-# 6b. Single-panel plot function (one land-use type)
+# 6b. Single-panel plot function (one land-use type, 1 row x 4 cols)
 # -----------------------------------------------------------------------------
 
-make_plot <- function(density_df, range_df, colour_scale, subtitle_txt) {
+make_plot <- function(density_df, range_df, colour_scale) {
   density_df <- density_df %>%
     mutate(variable = factor(variable, levels = var_labels),
            source   = factor(source,   levels = names(colour_scale)))
   range_df <- range_df %>%
-    mutate(source = factor(source, levels = names(colour_scale)))
+    mutate(variable = factor(variable, levels = var_labels),
+           source   = factor(source,   levels = names(colour_scale)))
   
   ymax_df <- density_df %>%
     group_by(variable) %>%
@@ -591,11 +592,12 @@ make_plot <- function(density_df, range_df, colour_scale, subtitle_txt) {
                      yend = y_bar + 0.004 * ymax,
                      colour = source),
                  linewidth = 0.8) +
-    facet_wrap(~ variable, scales = "free", ncol = 2) +
+    # ncol = 4: one row of 4 panels, each with fully independent scales
+    facet_wrap(~ variable, ncol = 4, scales = "free") +
     scale_colour_manual(values = colour_scale, name = NULL) +
     scale_fill_manual(  values = colour_scale, name = NULL) +
     coord_cartesian(clip = "off") +
-    labs(x = NULL, y = "Density", subtitle = subtitle_txt) +
+    labs(x = NULL, y = "Density") +
     theme_bw(base_size = 11) +
     theme(legend.position  = "bottom",
           strip.background = element_rect(fill = "grey92"),
@@ -603,7 +605,10 @@ make_plot <- function(density_df, range_df, colour_scale, subtitle_txt) {
 }
 
 # -----------------------------------------------------------------------------
-# 6c. Build panels and combine into a single figure
+# 6c. Build panels and stack with cowplot (no panel labels)
+#
+# Each land-use panel carries its own legend directly beneath it, matching
+# the previous two-panel design but now with 4 columns per row.
 # -----------------------------------------------------------------------------
 
 ranges_crop <- make_range_bars(df_crop,    "Global cropland",
@@ -611,15 +616,13 @@ ranges_crop <- make_range_bars(df_crop,    "Global cropland",
 ranges_past <- make_range_bars(df_pasture, "Global pasture",
                                df_field_pasture, "Pasture field sites")
 
-p_crop <- make_plot(density_crop, ranges_crop, colours_crop,
-                    "Cropland: global raster (weighted by fractional cover) vs field sites")
-p_past <- make_plot(density_past, ranges_past, colours_past,
-                    "Pasture: global raster (weighted by fractional cover) vs field sites")
+p_crop <- make_plot(density_crop, ranges_crop, colours_crop)
+p_past <- make_plot(density_past, ranges_past, colours_past)
 
-p_combined <- cowplot::plot_grid(p_crop, p_past, ncol = 1, labels = c("a", "b"))
+p_combined <- cowplot::plot_grid(p_crop, p_past, ncol = 1)
 
-ggsave("./figures/env_density_combined.pdf", p_combined, width = 8, height = 11)
-ggsave("./figures/env_density_combined.png", p_combined, width = 8, height = 11, dpi = 300)
+ggsave("./figures/env_density_combined.pdf", p_combined, width = 10, height = 5)
+ggsave("./figures/env_density_combined.png", p_combined, width = 10, height = 5, dpi = 300)
 message("Combined density figure written to ./figures/env_density_combined.pdf/.png")
 
 # =============================================================================
