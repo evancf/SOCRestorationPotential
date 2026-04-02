@@ -1,0 +1,1 @@
+This folder contains raster data produced by or detailed within 00_spatial_data.R

@@ -1,0 +1,18 @@
+﻿lu_end,notes,all_uncertain,Title
+F,inferred to be a forest region based on biome,,Farmland abandonment and vegetation succession mediate soil properties but are determined by the duration of conversion
+O,"described as a savanna system, so considering this open",yes,"Carbon, nitrogen and phosphorus allocation in agro-ecosystems of a West African savanna II. The soil component under semi-permanent cultivation. Agric. Ecosyst. Environ. 88, 233–248 (2002)."
+F,"described as a forest, characteristic of this region in eastern Madagascar",yes,"Site and watershed-level assessment of nutrient dynamics under shifting cultivation in eastern Madagascar. Agriculture Ecosystems & Environment, 71, 169-183."
+F,described as 'bush regrowth after forest clearing' so this can be considered forest.,yes,"EFFECT OF FALLOW AND CONTINUOUS CULTIVATION ON CHEMICAL AND PHYSICAL-PROPERTIES OF AN ALFISOL IN WESTERN NIGERIA. Plant and Soil, 47, 567-584."
+F,"described as rainforest region, which is characteristic of this region in southern Cameroon",no,Empirical modelling of soil dynamics along a chronosequence of shifting cultivation systems in southern Cameroon.
+F,described as a forested region,no,Soil organic carbon pool changes following land‐use conversions
+F,"described as forest ecosystem, which matches expectations for this region of Hawaii.",no,Soil carbon accretion and earthworm recovery following revegetation in abandoned sugarcane ﬁelds.
+O,"described as open area, which matches expectations for this region.",no,"Soil carbon, nitrogen and phosphorus in modified rangeland communities. J Range Manage 56, 665–672."
+F,"described as forest ecosystem, which matches expectations for this region of Michigan",no,Diversity and dynamics of microbial communities in soils from agro-ecosystems
+NA,"described as almonds plantation, so will treat as NA",yes,The conversion of overgrazed pasture to almond orchard and alfalfa cropping systems may favor microbial indicators of soil quality in Central Iran
+F,"described as bush, but generally a relatively closed forested region.",yes,"Soil Changes Resulting From Long-term Management Practices in Western Nigeria1. Soil Sci. Soc. Am. J. 43, 173–177 (1979)."
+F,"described as forest, which matches expectations for this region of S. Nigeria",yes,"INFLUENCE OF LAND-USE ON SOIL PROPERTIES IN A FOREST REGION OF SOUTHERN NIGERIA. Soil Use and Management, 8, 121-125."
+NA,"uncertain ones described are cacao plantations, which gives uncertainty about cropping, so will leave as NAs",no,Carbon dynamics in slash-and-burn agriculture and land use alternatives of the humid forest zone in Cameroon
+NA,"uncertain ones as coffee, so will leave as Nas",no,Soil organic matter in secondary forests of Puerto Rico
+NA,"uncertain ones are used as bioenergy willow, so will leave as NAs",yes,Soil carbon sequestration potential of willows in short-rotation coppice established on abandoned farm lands
+O,described as open ecosystem. Uncertain plots left fallow but remained open.,no,Does Pastoral Land-Use Legacy Influence Topsoil Carbon and Nitrogen Accrual Rates in Tallgrass Prairie Restorations?
+NA,"uncertain ones are under Opuntia cultivation, so will leave as NAs",yes,Cultivation of Opuntia ficus‐indica under different soil management practices: A possible sustainable agricultural system to promote soil carbon sequestration and increase soil microbial biomass and activity

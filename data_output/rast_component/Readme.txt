@@ -1,0 +1,1 @@
+This folder contains intermediate rasters produced by 04_bayes_results.R

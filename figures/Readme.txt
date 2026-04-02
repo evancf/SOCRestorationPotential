@@ -1,0 +1,1 @@
+This folder contains figures and tables produced by scripts 03-06.

@@ -1,0 +1,1 @@
+This folder contains stock rasters produced by 04_bayes_results.R

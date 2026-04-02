@@ -1,0 +1,1 @@
+This folder contains rasters for evaluating uncertainty produced by 05_bayes_uncertainty.R
