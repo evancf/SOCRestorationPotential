@@ -8,7 +8,9 @@
 # rgee package: https://cran.r-project.org/web/packages/rgee/vignettes/rgee01.html
 
 # Toward the bottom are some other rasters that can be
-# downloaded directly from the linked URLs
+# downloaded directly from the linked URLs.
+# Note also that users are supplied with ./data_inputs/raster/abandon_frac_1km.tif
+# that is not available elsewhere but generated for this publication.
 
 topwd <- getwd()
 
@@ -931,9 +933,7 @@ if(!"treecover2000.tif" %in% list.files()){
   merge_project_gee_rasters(treecover2000_raster)
 }
 
-# And a potential treecover raster
-# Available here: https://www.research-collection.ethz.ch/entities/researchdata/7234f0a1-e37d-4362-99e9-d0e6e75793dc
-#"./data_inputs/raster/Total_potential.tif"
+
 
 
 
@@ -950,6 +950,22 @@ if(!"treecover2000.tif" %in% list.files()){
 # raster to comport with the other scenario rasters.
 # writeRaster(HS.area, filename = "pasture_sparing_hotspot_frac_Hayek.tif")
 
-# Belowground ratio raster
+# Belowground ratio raster to be put in a folder called ./data_inputs/raster/belowground
 # https://www.nature.com/articles/s41559-021-01485-1
 # https://figshare.com/projects/The_global_distribution_and_environmental_drivers_of_aboveground_versus_belowground_plant_biomass/120897
+
+# Sanderman et al. 2017 NoLU_10km tifs are saved in ./data_inputs/raster/Sanderman2017
+# https://www.pnas.org/doi/10.1073/pnas.1706103114
+# https://github.com/whrc/Soil-Carbon-Debt/tree/master/OCD
+
+# Xu et al. 2026 in ./data_inputs/raster/CCIBM and SBM
+# https://www.nature.com/articles/s41586-025-09870-7
+# https://zenodo.org/records/15869647
+
+# Robinson et al. 2025 tifs are saved in ./data_inputs/raster/Robinson et al. 2025
+# https://www.nature.com/articles/s41558-025-02355-5
+# https://zenodo.org/records/15090826
+
+# And a potential treecover raster
+# Available here: https://www.research-collection.ethz.ch/entities/researchdata/7234f0a1-e37d-4362-99e9-d0e6e75793dc
+#"./data_inputs/raster/Total_potential.tif"
